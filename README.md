@@ -1,67 +1,45 @@
-# 🍕 BLEM'S PIZZARIA
+ BLEM'S PIZZERIA
 
-> **Aplicação Web Profissional de Pizzaria para o Mercado Americano**
-> *Desenvolvida com HTML5 100% Semântico (Zero Classes), CSS3 por Atributos, JavaScript Autônomo e Banco de Dados Cliente (BlemsDB).*
-
----
-
-## 📌 Sobre o Projeto
-
-A **BLEM'S PIZZARIA** é uma aplicação web moderna, responsiva e de altíssimo padrão visual (Glassmorphism Escuro), projetada especificamente para o público dos Estados Unidos (preços em USD `$`, receitas clássicas americanas como *NY Style, Chicago Deep Dish, Detroit Style*, seletor de gorjeta e cálculo de taxas de Nova York).
-
-A aplicação conta com arquitetura de código limpa, comentários 100% em **Português (BR)** e um desafio técnico cumprido: **Zero atributos `class="..."` e Zero tags `<div>`** no HTML, utilizando exclusivamente seletores por elementos semânticos do HTML5, IDs e atributos `data-*`.
+> **Professional Web Application for a Pizzeria Targeting the U.S. Market**
+> *Developed with 100% semantic HTML5 (zero classes), attribute-based CSS3, standalone JavaScript, and a custom database (BlemsDB).*
 
 ---
 
-## ✨ Principais Recursos
+**📌 About the Project**
 
-- **🍽️ Cardápio Interativo Filtrável**: Pizzas de assinatura, acompanhamentos, asas crocantes, bebidas artesanais e sobremesas carregados dinamicamente.
-- **✨ Construtor de Pizza Customizada (Custom Pizza Builder)**: Permite ao cliente escolher tamanho (10", 12", 14", 18"), estilo de massa (*NY Thin, Deep Dish, Detroit, Stuffed Crust, Gluten-Free*), molhos e coberturas com cálculo de preço e pré-visualização visual em tempo real.
-- **🛍️ Carrinho de Compras e Checkout**:
-  - Modalidade Entrega (*Delivery*) ou Retirada (*Pickup*).
-  - Calculadora de Gorjeta do Motorista (*15%, 18%, 20%* - padrão americano).
-  - Cupom de desconto (`BLEMS10` para 10% OFF).
-  - Cálculo automático de impostos estaduais de NY (8.875%).
-  - Pagamento simulado (*Cartão de Crédito, Apple Pay, Dinheiro na Entrega*).
-- **🎯 Rastreador de Pedidos em Tempo Real**: Linha do tempo visual que consulta o status do pedido (*Received ➔ Preparing ➔ In Oven ➔ Out for Delivery ➔ Completed*) através de um código único gerado (ex: `BLEM-84920`).
-- **📅 Sistema de Reserva de Mesas**: Formulário para agendamento de data, horário, número de convidados e preferência de assento.
-- **💾 Painel Administrativo BlemsDB**: Portal para a gerência visualizar pedidos e reservas armazenadas e atualizar os status da cozinha em tempo real.
+**BLEM'S PIZZARIA** is a modern, responsive web application with a high-end visual design (Dark Glassmorphism), designed specifically for the U.S. market (prices in USD `$`, classic American recipes such as *NY Style, Chicago Deep Dish, Detroit Style*, tip selector, and New York tax calculation).
+
+The application features clean code architecture, 100% comments in **Portuguese (BR)**, and a technical challenge successfully met: **Zero `class=“...”` attributes and Zero `<div>` tags** in the HTML, using exclusively selectors based on HTML5 semantic elements, IDs, and `data-*` attributes.
 
 ---
 
-## 🛠️ Tecnologias Utilizadas
+**✨ Key Features**
 
-- **HTML5 100% Semântico**: Estruturação sem utilizar nenhuma tag `<div>` ou atributo `class="..."`. Utiliza elementos semânticos nativos como `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<picture>`, `<figcaption>`, `<fieldset>`, `<legend>`, `<output>`, `<dialog>`, `<aside>`, `<footer>`, `<hgroup>`, `<address>`, `<time>`, `<mark>`, `<menu>`.
-- **CSS3 Moderno por Atributos**: Estilização baseada em Design Tokens (variáveis CSS), Glassmorphism com `backdrop-filter`, layout responsivo via Flexbox e CSS Grid, animações `@keyframes` e seletores orientados a elementos e atributos (`[data-active="true"]`, `[data-category]`, `[data-type]`).
-- **JavaScript (ES6+) Autônomo**: Programação modular dividida em controladores (`app.js`, `builder.js`, `cart.js`, `tracker.js`, `reservations.js`, `admin.js`).
-- **BlemsDB (Engine de Banco de Dados Cliente)**: Módulo em JS (`db.js`) responsável pela persistência de pedidos, reservas e avaliações no `LocalStorage` sem depender de servidores externos.
-- **Node.js & Express (Opcional)**: Servidor de apoio incluído no repositório (`server.js` + `database.sqlite`) para ambientes full-stack.
-
----
-
-## 🚀 Como Executar o Projeto
-
-### Opção 1: Execução Direta no Navegador (Recomendado)
-Como a aplicação utiliza o banco autônomo **BlemsDB**, basta abrir o arquivo `Index.html` ou `public/index.html` diretamente em qualquer navegador moderno.
-
-### Opção 2: Execução com Servidor Node.js & SQLite
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/ruan-alves/blems-pizzaria.git
-   ```
-2. Instale as dependências:
-   ```bash
-   npm install
-   ```
-3. Inicie o servidor:
-   ```bash
-   npm start
-   ```
-4. Acesse no navegador:
-   `http://localhost:3000`
+- **🍽️ Filterable Interactive Menu**: Signature pizzas, sides, crispy wings, craft beverages, and desserts loaded dynamically.
+- **✨ Custom Pizza Builder**: Allows customers to choose size (10“, 12”, 14“, 18”), crust style (*NY Thin, Deep Dish, Detroit, Stuffed Crust, Gluten-Free*), sauces, and toppings with real-time price calculation and visual preview.
+- **🛍️ Shopping Cart and Checkout**:
+  - Delivery or Pickup options.
+  - Driver tip calculator (*15%, 18%, 20%*—U.S. standard).
+  - Discount coupon (`BLEMS10` for 10% OFF).
+  - Automatic calculation of NY state sales tax (8.875%).
+  - Simulated payment (*Credit Card, Apple Pay, Cash on Delivery*).
+- **🎯 Real-Time Order Tracker**: A visual timeline that tracks the order status (*Received ➔ Preparing ➔ In Oven ➔ Out for Delivery ➔ Completed*) using a unique generated code (e.g., `BLEM-84920`).
+- **📅 Table Reservation System**: Form for scheduling the date, time, number of guests, and seating preference.
+- **💾 Administrative Dashboard**: Portal for management to view stored orders and reservations and update kitchen statuses in real time.
 
 ---
 
-## 🤖 Atribuição e Créditos
+**Technologies Used**
 
-> **Desenvolvido por Ruan Alves com auxílio de agentes de IA (Google Antigravity + Claude Code) para aceleração de código e testes.**
+- **100% Semantic HTML5**: Structured without using any `<div>` tags or `class=“...”` attributes. Uses native semantic elements such as `<header>`, `<nav>`, `<main>`, `<section>`, `<article>`, `<figure>`, `<picture>`, `<figcaption>`, `<fieldset>`, `<legend>`, `<output>`, `<dialog>`, `<aside>`, `<footer>`, `<hgroup>`, `<address>`, `<time>`, `<mark>`, `<menu>`.
+- **Modern CSS3 Using Attributes**: Styling based on Design Tokens (CSS variables), Glassmorphism with `backdrop-filter`, responsive layout via Flexbox and CSS Grid, `@keyframes` animations, and element- and attribute-oriented selectors (`[data-active=“true”]`, `[data-category]`, `[data-type]`).
+- **Standalone JavaScript (ES6+)**: Modular programming divided into controllers (`app.js`, `builder.js`, `cart.js`, `tracker.js`, `reservations.js`, `admin.js`).
+
+
+
+
+---
+
+ **Attribution and Credits**
+
+> **Developed by Ruan Alves with the assistance of AI agents (Google Antigravity + Claude Code) for code optimization and testing.**

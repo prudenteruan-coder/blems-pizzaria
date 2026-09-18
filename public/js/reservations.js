@@ -1,4 +1,4 @@
-async function handleReservationSubmit(event) {
+function handleReservationSubmit(event) {
     event.preventDefault();
 
     const name = document.getElementById('resName').value.trim();
@@ -24,23 +24,12 @@ async function handleReservationSubmit(event) {
         seating_preference: seating
     };
 
-    try {
-        const response = await fetch('/api/reservations', {
-            method: 'POST',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify(payload)
-        });
+    const result = BlemsDB.createReservation(payload);
 
-        const data = await response.json();
-
-        if (data.success) {
-            showToast(`🎉 Table Reserved! We look forward to seeing you on ${date} at ${time}.`);
-            document.getElementById('reservationForm').reset();
-        } else {
-            alert('Error creating reservation: ' + data.error);
-        }
-    } catch (err) {
-        console.error('Erro na requisição de reserva:', err);
-        alert('Could not connect to database server.');
+    if (result.success) {
+        showToast(`🎉 Table Reserved! We look forward to seeing you on ${date} at ${time}.`);
+        document.getElementById('reservationForm').reset();
+    } else {
+        alert('Could not create reservation.');
     }
 }

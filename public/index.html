@@ -1,17 +1,4 @@
 <!DOCTYPE html>
-<!-- 
-=================================================================================
-BLEM'S PIZZARIA - ESTRUTURA HTML5 100% PURA E SEM NENHUMA CLASSE (ZERO CLASSES)
-=================================================================================
-NENHUM ATRIBUTO 'class' E NENHUMA TAG <div> EXISTE NESTE ARQUIVO.
-Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
-<header>, <nav>, <main>, <section>, <article>, <figure>, <picture>, <figcaption>,
-<fieldset>, <legend>, <output>, <dialog>, <aside>, <footer>, <hgroup>, <address>,
-<time>, <mark>, <menu>, <ul>, <li>, <form>, <input>, <button>, <select>, <span>, <strong>.
-
-Ícones renderizados por Unicode Emojis & SVGs para eliminar dependências de classes.
-=================================================================================
--->
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -20,19 +7,14 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
     <title>BLEM'S PIZZARIA | Authentic NY Style & Wood-Fired Artisanal Pizza</title>
     <meta name="description" content="BLEM'S PIZZARIA serves authentic New York style, Chicago Deep Dish, and artisan wood-fired pizzas baked at 800°F. Order online or reserve a table.">
 
-    <!-- Fontes do Google -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
 
-    <!-- Folha de Estilos Pura Semântica (Zero Classes) -->
     <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
 
-    <!-- =====================================================================
-         1. CABEÇALHO E NAVEGAÇÃO SUPERIOR (<header id="topNavbar">)
-         ===================================================================== -->
     <header id="topNavbar">
         <nav>
             <a href="#" id="brandLogo">
@@ -70,13 +52,7 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </nav>
     </header>
 
-    <!-- =====================================================================
-         2. CONTEÚDO PRINCIPAL DA PÁGINA (<main>)
-         ===================================================================== -->
     <main>
-        <!-- =================================================================
-             2.1 SEÇÃO HERO DE BOAS-VINDAS (<section id="hero">)
-             ================================================================= -->
         <section id="hero">
             <article>
                 <header>
@@ -114,9 +90,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
             </article>
         </section>
 
-        <!-- =================================================================
-             2.2 SEÇÃO DO CARDÁPIO (<section id="menu">)
-             ================================================================= -->
         <section id="menu">
             <article>
                 <header id="menuHeader">
@@ -134,14 +107,10 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
                 </nav>
 
                 <section id="menuGrid">
-                    <!-- Renderizado dinamicamente pelo BlemsDB sem classes -->
                 </section>
             </article>
         </section>
 
-        <!-- =================================================================
-             2.3 SEÇÃO DO CONSTRUTOR DE PIZZA (<section id="builder">)
-             ================================================================= -->
         <section id="builder">
             <article>
                 <header id="builderHeader">
@@ -249,9 +218,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
             </article>
         </section>
 
-        <!-- =================================================================
-             2.4 SEÇÃO DE RESERVA DE MESAS (<section id="reservations">)
-             ================================================================= -->
         <section id="reservations">
             <article>
                 <section id="reservationWrapper">
@@ -332,9 +298,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
             </article>
         </section>
 
-        <!-- =================================================================
-             2.5 AVALIAÇÕES (<section id="reviews">)
-             ================================================================= -->
         <section id="reviews">
             <article>
                 <header>
@@ -343,15 +306,11 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
                 </header>
 
                 <section id="reviewsGrid">
-                    <!-- Renderizado pelo BlemsDB -->
                 </section>
             </article>
         </section>
     </main>
 
-    <!-- =========================================================================
-         3. RODAPÉ (<footer>)
-         ========================================================================= -->
     <footer>
         <section id="footerContent">
             <article>
@@ -391,9 +350,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </section>
     </footer>
 
-    <!-- =========================================================================
-         4. GAVETA DO CARRINHO (<aside id="cartDrawer">)
-         ========================================================================= -->
     <span id="cartOverlay" onclick="closeCartDrawer()"></span>
     <aside id="cartDrawer">
         <header>
@@ -411,7 +367,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </nav>
 
         <section id="cartItemsList">
-            <!-- Renderizado via JS -->
         </section>
 
         <footer id="cartFooter">
@@ -444,10 +399,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </footer>
     </aside>
 
-    <!-- =========================================================================
-         5. MODAIS (<dialog>)
-         ========================================================================= -->
-    <!-- Modal de Checkout -->
     <dialog id="checkoutModal">
         <article>
             <header>
@@ -520,7 +471,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </article>
     </dialog>
 
-    <!-- Modal do Rastreador -->
     <dialog id="trackerModal">
         <article>
             <header>
@@ -543,7 +493,6 @@ Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
         </article>
     </dialog>
 
-    <!-- Modal do Administrador -->
     <dialog id="adminModal" data-modal-lg="true">
         <article>
             <header>

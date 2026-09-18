@@ -1,17 +1,3 @@
-/**
- * =================================================================================
- * BLEM'S PIZZARIA - GESTOR DE CARRINHO E CHECKOUT ZERO-CLASSES (cart.js)
- * =================================================================================
- * Este arquivo JavaScript gerencia todo o estado do carrinho sem NENHUMA classe CSS:
- * - Armazenamento de itens com opções de personalização
- * - Alternância entre Entrega (Delivery) e Retirada na Loja (Pickup)
- * - Cálculo de Subtotal, Gorjeta do Motorista, Taxa de NY e Desconto
- * - Geração e gravação de pedidos no BlemsDB sem classes HTML
- * 
- * Todos os comentários estão em Português (BR).
- * =================================================================================
- */
-
 let cartState = {
     items: [],
     deliveryType: 'delivery',
@@ -136,9 +122,6 @@ function applyPromoCode() {
     updateCartUI();
 }
 
-/**
- * Atualiza a interface do carrinho com ZERO classes no HTML
- */
 function updateCartUI() {
     const cartList = document.getElementById('cartItemsList');
     const cartBadge = document.getElementById('cartBadge');

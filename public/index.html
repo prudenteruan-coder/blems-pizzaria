@@ -1,0 +1,608 @@
+<!DOCTYPE html>
+<!-- 
+=================================================================================
+BLEM'S PIZZARIA - ESTRUTURA HTML5 100% PURA E SEM NENHUMA CLASSE (ZERO CLASSES)
+=================================================================================
+NENHUM ATRIBUTO 'class' E NENHUMA TAG <div> EXISTE NESTE ARQUIVO.
+Toda a estrutura utiliza exclusivamente elementos semânticos do HTML5:
+<header>, <nav>, <main>, <section>, <article>, <figure>, <picture>, <figcaption>,
+<fieldset>, <legend>, <output>, <dialog>, <aside>, <footer>, <hgroup>, <address>,
+<time>, <mark>, <menu>, <ul>, <li>, <form>, <input>, <button>, <select>, <span>, <strong>.
+
+Ícones renderizados por Unicode Emojis & SVGs para eliminar dependências de classes.
+=================================================================================
+-->
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>BLEM'S PIZZARIA | Authentic NY Style & Wood-Fired Artisanal Pizza</title>
+    <meta name="description" content="BLEM'S PIZZARIA serves authentic New York style, Chicago Deep Dish, and artisan wood-fired pizzas baked at 800°F. Order online or reserve a table.">
+
+    <!-- Fontes do Google -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Folha de Estilos Pura Semântica (Zero Classes) -->
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+
+    <!-- =====================================================================
+         1. CABEÇALHO E NAVEGAÇÃO SUPERIOR (<header id="topNavbar">)
+         ===================================================================== -->
+    <header id="topNavbar">
+        <nav>
+            <a href="#" id="brandLogo">
+                <picture>
+                    <img src="/images/blems_logo.png" alt="BLEM'S PIZZARIA Logo">
+                </picture>
+                <hgroup>
+                    <h1>BLEM'S</h1>
+                    <p>PIZZARIA</p>
+                </hgroup>
+            </a>
+
+            <ul id="navMenu">
+                <li><a href="#hero" data-active="true">🏠 Home</a></li>
+                <li><a href="#menu">🍕 Menu</a></li>
+                <li><a href="#builder">✨ Custom Builder</a></li>
+                <li><a href="#reservations">📅 Reserve Table</a></li>
+                <li><a href="#reviews">★ Reviews</a></li>
+            </ul>
+
+            <menu>
+                <button type="button" id="btnTrackOrder" onclick="openModal('trackerModal')">
+                    🎯 Track Order
+                </button>
+                <button type="button" id="btnOpenCart" onclick="openCartDrawer()">
+                    🛍️ Cart <mark id="cartBadge">0</mark>
+                </button>
+                <button type="button" id="btnAdminPortal" title="Admin Portal" onclick="openModal('adminModal')">
+                    ⚙️
+                </button>
+                <button type="button" id="mobileToggle" onclick="toggleMobileMenu()">
+                    ☰
+                </button>
+            </menu>
+        </nav>
+    </header>
+
+    <!-- =====================================================================
+         2. CONTEÚDO PRINCIPAL DA PÁGINA (<main>)
+         ===================================================================== -->
+    <main>
+        <!-- =================================================================
+             2.1 SEÇÃO HERO DE BOAS-VINDAS (<section id="hero">)
+             ================================================================= -->
+        <section id="hero">
+            <article>
+                <header>
+                    <mark id="heroBadge">
+                        🔥 NY's Premier Wood-Fired Pizzeria • <span>★ 4.9 (2,400+ Reviews)</span>
+                    </mark>
+                    <h2>
+                        Handcrafted <span>NY & Artisan Pizzas</span> Baked at 800°F
+                    </h2>
+                    <p>
+                        Fresh hand-tossed dough prepped daily, authentic Italian San Marzano sauce, and melted whole-milk mozzarella baked in our traditional brick oven.
+                    </p>
+                    <nav>
+                        <a href="#menu" data-btn-type="primary">
+                            🍕 Order Online Now
+                        </a>
+                        <a href="#builder" data-btn-type="secondary">
+                            ✨ Build Custom Pizza
+                        </a>
+                    </nav>
+                    <ul>
+                        <li><span data-color="gold">⚡</span><span>30-Min Delivery</span></li>
+                        <li><span data-color="crimson">🔥</span><span>Wood-Fired Oven</span></li>
+                        <li><span data-color="green">🌱</span><span>100% Organic</span></li>
+                    </ul>
+                </header>
+
+                <figure id="heroImageWrapper">
+                    <img src="/images/blems_hero_pizza.jpg" alt="BLEM'S Signature Artisan Pizza">
+                    <figcaption id="heroPriceBadge">
+                        <span>Starting at</span>
+                        <output>$19.99</output>
+                    </figcaption>
+                </figure>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             2.2 SEÇÃO DO CARDÁPIO (<section id="menu">)
+             ================================================================= -->
+        <section id="menu">
+            <article>
+                <header id="menuHeader">
+                    <span>TREAT YOURSELF</span>
+                    <h2>Explore Our Signature Menu</h2>
+                    <p>Handcrafted pizzas, crispy jumbo wings, refreshing craft beverages, and irresistible desserts.</p>
+                </header>
+
+                <nav id="categoryTabs">
+                    <button type="button" data-category="all" data-active="true">🍽️ All Items</button>
+                    <button type="button" data-category="pizzas">🍕 Signature Pizzas</button>
+                    <button type="button" data-category="sides">🍗 Sides & Wings</button>
+                    <button type="button" data-category="drinks">🍺 Beverages</button>
+                    <button type="button" data-category="desserts">🍰 Desserts</button>
+                </nav>
+
+                <section id="menuGrid">
+                    <!-- Renderizado dinamicamente pelo BlemsDB sem classes -->
+                </section>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             2.3 SEÇÃO DO CONSTRUTOR DE PIZZA (<section id="builder">)
+             ================================================================= -->
+        <section id="builder">
+            <article>
+                <header id="builderHeader">
+                    <span>BE THE CHEF</span>
+                    <h2>Build Your Own Custom Pizza</h2>
+                    <p>Customize your size, crust, sauce, cheeses, and stack your favorite toppings live!</p>
+                </header>
+
+                <section id="builderContainer">
+                    <article id="builderPreviewCard">
+                        <figure id="pizzaVisualBox">
+                            <span id="crustLayer"></span>
+                            <span id="sauceLayer"></span>
+                            <span id="cheeseLayer"></span>
+                            <figcaption id="toppingsContainer"></figcaption>
+                        </figure>
+
+                        <footer id="builderPriceBox">
+                            <hgroup>
+                                <span id="builderSizeLabel">Large (14")</span>
+                                <output id="builderTotalPrice">$21.49</output>
+                            </hgroup>
+                            <button type="button" id="btnAddCustomToCart" onclick="addCustomPizzaToCart()">
+                                🛒 Add Custom Pizza to Cart
+                            </button>
+                        </footer>
+                    </article>
+
+                    <form id="builderControls" onsubmit="return false;">
+                        <fieldset>
+                            <legend><mark>1</mark> Choose Size</legend>
+                            <section id="sizeOptions">
+                                <button type="button" data-type="size" data-value="Personal 10&quot;" data-price="13.99">
+                                    <span>Personal (10")</span>
+                                    <output>$13.99</output>
+                                </button>
+                                <button type="button" data-type="size" data-value="Medium 12&quot;" data-price="17.99">
+                                    <span>Medium (12")</span>
+                                    <output>$17.99</output>
+                                </button>
+                                <button type="button" data-type="size" data-value="Large 14&quot;" data-price="21.49" data-active="true">
+                                    <span>Large (14")</span>
+                                    <output>$21.49</output>
+                                </button>
+                                <button type="button" data-type="size" data-value="XL 18&quot;" data-price="25.99">
+                                    <span>XL (18")</span>
+                                    <output>$25.99</output>
+                                </button>
+                            </section>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><mark>2</mark> Choose Crust Style</legend>
+                            <section id="crustOptions">
+                                <button type="button" data-type="crust" data-value="NY Thin Crust" data-price="0" data-active="true">
+                                    <span>NY Thin Crust</span>
+                                    <output>Included</output>
+                                </button>
+                                <button type="button" data-type="crust" data-value="Chicago Deep Dish" data-price="3.00">
+                                    <span>Chicago Deep Dish</span>
+                                    <output>+$3.00</output>
+                                </button>
+                                <button type="button" data-type="crust" data-value="Detroit Square" data-price="2.50">
+                                    <span>Detroit Style</span>
+                                    <output>+$2.50</output>
+                                </button>
+                                <button type="button" data-type="crust" data-value="Garlic Stuffed Crust" data-price="3.50">
+                                    <span>Garlic Stuffed Crust</span>
+                                    <output>+$3.50</output>
+                                </button>
+                                <button type="button" data-type="crust" data-value="Gluten-Free Crust" data-price="2.00">
+                                    <span>Gluten-Free</span>
+                                    <output>+$2.00</output>
+                                </button>
+                            </section>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><mark>3</mark> Choose Sauce Base</legend>
+                            <section id="sauceOptions">
+                                <button type="button" data-type="sauce" data-value="San Marzano Marinara" data-color="#b91c1c" data-active="true"><span>San Marzano Marinara</span></button>
+                                <button type="button" data-type="sauce" data-value="Garlic Alfredo" data-color="#fef08a"><span>Garlic Alfredo</span></button>
+                                <button type="button" data-type="sauce" data-value="Spicy Arrabbiata" data-color="#dc2626"><span>Spicy Arrabbiata</span></button>
+                                <button type="button" data-type="sauce" data-value="Smoky BBQ" data-color="#78350f"><span>Smoky BBQ</span></button>
+                            </section>
+                        </fieldset>
+
+                        <fieldset>
+                            <legend><mark>4</mark> Select Extra Toppings (+$1.75 each)</legend>
+                            <section id="toppingsGrid">
+                                <button type="button" data-topping="Pepperoni" data-icon="🍖"><span>🍖 Pepperoni</span></button>
+                                <button type="button" data-topping="Italian Sausage" data-icon="🥩"><span>🥩 Italian Sausage</span></button>
+                                <button type="button" data-topping="Crispy Bacon" data-icon="🥓"><span>🥓 Crispy Bacon</span></button>
+                                <button type="button" data-topping="Fresh Mushrooms" data-icon="🍄"><span>🍄 Mushrooms</span></button>
+                                <button type="button" data-topping="Bell Peppers" data-icon="🫑"><span>🫑 Bell Peppers</span></button>
+                                <button type="button" data-topping="Jalapeños" data-icon="🌶️"><span>🌶️ Jalapeños</span></button>
+                                <button type="button" data-topping="Caramelized Pineapple" data-icon="🍍"><span>🍍 Pineapple</span></button>
+                                <button type="button" data-topping="Organic Fresh Basil" data-icon="🌿"><span>🌿 Fresh Basil</span></button>
+                                <button type="button" data-topping="Black Olives" data-icon="🫒"><span>🫒 Black Olives</span></button>
+                                <button type="button" data-topping="Truffle Oil Drizzle" data-icon="✨"><span>✨ Truffle Oil</span></button>
+                            </section>
+                        </fieldset>
+                    </form>
+                </section>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             2.4 SEÇÃO DE RESERVA DE MESAS (<section id="reservations">)
+             ================================================================= -->
+        <section id="reservations">
+            <article>
+                <section id="reservationWrapper">
+                    <header>
+                        <span>DINE WITH US</span>
+                        <h2>Book a Table at BLEM'S</h2>
+                        <p>Experience the ambient warmth of our wood-fired oven room. Perfect for family gatherings, romantic date nights, or group celebrations.</p>
+                        <address>
+                            <p>📍 <span>142 Spring Street, Soho, New York, NY 10012</span></p>
+                            <p>⏰ <time>Mon - Sun: 11:00 AM - 11:00 PM</time></p>
+                            <p>📞 <span>(212) 555-PIZZA (7499)</span></p>
+                        </address>
+                    </header>
+
+                    <form id="reservationForm" onsubmit="handleReservationSubmit(event)">
+                        <h3>Reserve Your Spot</h3>
+
+                        <fieldset>
+                            <label for="resName">Full Name *</label>
+                            <input type="text" id="resName" placeholder="John Smith" required>
+                        </fieldset>
+
+                        <section data-form-row="true">
+                            <fieldset>
+                                <label for="resEmail">Email Address</label>
+                                <input type="email" id="resEmail" placeholder="john@example.com">
+                            </fieldset>
+                            <fieldset>
+                                <label for="resPhone">Phone Number *</label>
+                                <input type="tel" id="resPhone" placeholder="(555) 019-2834" required>
+                            </fieldset>
+                        </section>
+
+                        <section data-form-row="true">
+                            <fieldset>
+                                <label for="resDate">Date *</label>
+                                <input type="date" id="resDate" required>
+                            </fieldset>
+                            <fieldset>
+                                <label for="resTime">Time *</label>
+                                <select id="resTime" required>
+                                    <option value="12:00 PM">12:00 PM</option>
+                                    <option value="1:30 PM">1:30 PM</option>
+                                    <option value="5:00 PM">5:00 PM</option>
+                                    <option value="6:30 PM">6:30 PM</option>
+                                    <option value="7:30 PM" selected>7:30 PM</option>
+                                    <option value="9:00 PM">9:00 PM</option>
+                                </select>
+                            </fieldset>
+                        </section>
+
+                        <section data-form-row="true">
+                            <fieldset>
+                                <label for="resGuests">Number of Guests *</label>
+                                <select id="resGuests" required>
+                                    <option value="1">1 Person</option>
+                                    <option value="2" selected>2 Guests</option>
+                                    <option value="4">4 Guests</option>
+                                    <option value="6">6 Guests</option>
+                                    <option value="8">8+ Party</option>
+                                </select>
+                            </fieldset>
+                            <fieldset>
+                                <label for="resSeating">Seating Preference</label>
+                                <select id="resSeating">
+                                    <option value="Main Dining Room">Main Dining Room</option>
+                                    <option value="Wood-Fired Oven View">Oven Bar View</option>
+                                    <option value="Patio Garden">Outdoor Patio</option>
+                                </select>
+                            </fieldset>
+                        </section>
+
+                        <button type="submit" id="btnConfirmReservation">
+                            📅 Confirm Reservation
+                        </button>
+                    </form>
+                </section>
+            </article>
+        </section>
+
+        <!-- =================================================================
+             2.5 AVALIAÇÕES (<section id="reviews">)
+             ================================================================= -->
+        <section id="reviews">
+            <article>
+                <header>
+                    <span>TESTIMONIALS</span>
+                    <h2>Loved by Pizza Lovers Across NY</h2>
+                </header>
+
+                <section id="reviewsGrid">
+                    <!-- Renderizado pelo BlemsDB -->
+                </section>
+            </article>
+        </section>
+    </main>
+
+    <!-- =========================================================================
+         3. RODAPÉ (<footer>)
+         ========================================================================= -->
+    <footer>
+        <section id="footerContent">
+            <article>
+                <a href="#" id="footerLogo">
+                    <img src="/images/blems_logo.png" alt="Logo">
+                    <span>BLEM'S PIZZARIA</span>
+                </a>
+                <p>Authentic Wood-Fired & NY Style Pizza baked fresh daily in Soho, New York.</p>
+                <nav id="socialLinks">
+                    <a href="#">📸</a>
+                    <a href="#">📘</a>
+                    <a href="#">🎵</a>
+                </nav>
+            </article>
+
+            <article>
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#menu">Signature Menu</a></li>
+                    <li><a href="#builder">Custom Pizza Builder</a></li>
+                    <li><a href="#reservations">Book a Table</a></li>
+                    <li><a href="#" onclick="openModal('trackerModal')">Order Tracker</a></li>
+                </ul>
+            </article>
+
+            <article>
+                <h4>Hours & Location</h4>
+                <address>
+                    <p>📍 142 Spring St, Soho, NY 10012</p>
+                    <p>⏰ <time>Sun-Thu: 11am - 10pm</time></p>
+                    <p>⏰ <time>Fri-Sat: 11am - 12am</time></p>
+                </address>
+            </article>
+        </section>
+        <section id="footerBottom">
+            <p>&copy; 2026 BLEM'S PIZZARIA. All rights reserved. Crafted for pizza perfection.</p>
+        </section>
+    </footer>
+
+    <!-- =========================================================================
+         4. GAVETA DO CARRINHO (<aside id="cartDrawer">)
+         ========================================================================= -->
+    <span id="cartOverlay" onclick="closeCartDrawer()"></span>
+    <aside id="cartDrawer">
+        <header>
+            <h3>🛍️ Your Pizza Order</h3>
+            <button type="button" id="btnCloseCart" onclick="closeCartDrawer()">&times;</button>
+        </header>
+
+        <nav id="deliveryToggle">
+            <button type="button" id="btnDelivery" data-active="true" onclick="setDeliveryType('delivery')">
+                🚚 Delivery
+            </button>
+            <button type="button" id="btnPickup" onclick="setDeliveryType('pickup')">
+                🏪 Pickup
+            </button>
+        </nav>
+
+        <section id="cartItemsList">
+            <!-- Renderizado via JS -->
+        </section>
+
+        <footer id="cartFooter">
+            <fieldset id="promoBox">
+                <input type="text" id="promoInput" placeholder="Promo Code (Try BLEMS10)">
+                <button type="button" onclick="applyPromoCode()">Apply</button>
+            </fieldset>
+
+            <fieldset id="tipSelector">
+                <legend>Add Driver Tip:</legend>
+                <menu>
+                    <button type="button" data-tip="0.15" onclick="setTip(0.15)">15%</button>
+                    <button type="button" data-tip="0.18" data-active="true" onclick="setTip(0.18)">18%</button>
+                    <button type="button" data-tip="0.20" onclick="setTip(0.20)">20%</button>
+                </menu>
+            </fieldset>
+
+            <section id="cartSummary">
+                <p><span>Subtotal</span><output id="cartSubtotal">$0.00</output></p>
+                <p id="discountRow" style="display:none;"><span data-color="green">Discount (10%)</span><output data-color="green" id="cartDiscount">-$0.00</output></p>
+                <p><span>Delivery Fee</span><output id="cartDeliveryFee">$3.99</output></p>
+                <p><span>Driver Tip</span><output id="cartTipAmount">$0.00</output></p>
+                <p><span>Estimated Tax (8.875%)</span><output id="cartTax">$0.00</output></p>
+                <p id="totalRow"><span>Total</span><output id="cartTotal">$0.00</output></p>
+            </section>
+
+            <button type="button" id="btnProceedCheckout" onclick="openCheckoutModal()">
+                Proceed to Checkout ➔
+            </button>
+        </footer>
+    </aside>
+
+    <!-- =========================================================================
+         5. MODAIS (<dialog>)
+         ========================================================================= -->
+    <!-- Modal de Checkout -->
+    <dialog id="checkoutModal">
+        <article>
+            <header>
+                <h3>🔒 Complete Your Order</h3>
+                <button type="button" onclick="closeModal('checkoutModal')">&times;</button>
+            </header>
+            <form id="checkoutForm" onsubmit="processOrderPayment(event)">
+                <section>
+                    <h4>1. Customer Information</h4>
+                    <fieldset>
+                        <label for="custName">Full Name *</label>
+                        <input type="text" id="custName" placeholder="Alex Morgan" required>
+                    </fieldset>
+                    <section data-form-row="true">
+                        <fieldset>
+                            <label for="custPhone">US Phone Number *</label>
+                            <input type="tel" id="custPhone" placeholder="(555) 234-5678" required>
+                        </fieldset>
+                        <fieldset>
+                            <label for="custEmail">Email Address</label>
+                            <input type="email" id="custEmail" placeholder="alex@gmail.com">
+                        </fieldset>
+                    </section>
+
+                    <fieldset id="addressGroup">
+                        <label for="custAddress">Delivery Street Address *</label>
+                        <input type="text" id="custAddress" placeholder="742 Evergreen Terrace, Apt 4B, NY 10012">
+                    </fieldset>
+
+                    <h4>2. Select Payment Method</h4>
+                    <fieldset id="paymentMethods">
+                        <label>
+                            <input type="radio" name="payMethod" value="Credit Card" checked>
+                            <span>💳 Credit / Debit Card</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="payMethod" value="Apple Pay">
+                            <span>🍎 Apple Pay</span>
+                        </label>
+                        <label>
+                            <input type="radio" name="payMethod" value="Cash on Delivery">
+                            <span>💵 Cash on Delivery</span>
+                        </label>
+                    </fieldset>
+
+                    <fieldset id="cardDetailsBox">
+                        <fieldset>
+                            <label for="cardNumber">Card Number</label>
+                            <input type="text" id="cardNumber" placeholder="4532 •••• •••• 8921">
+                        </fieldset>
+                        <section data-form-row="true">
+                            <fieldset>
+                                <label for="cardExp">Expiry Date</label>
+                                <input type="text" id="cardExp" placeholder="MM/YY">
+                            </fieldset>
+                            <fieldset>
+                                <label for="cardCvc">CVC</label>
+                                <input type="text" id="cardCvc" placeholder="123">
+                            </fieldset>
+                        </section>
+                    </fieldset>
+                </section>
+                <footer>
+                    <button type="button" onclick="closeModal('checkoutModal')">Cancel</button>
+                    <button type="submit" id="btnPlaceOrder">
+                        ✓ Place Order (<output id="modalTotalPay">$0.00</output>)
+                    </button>
+                </footer>
+            </form>
+        </article>
+    </dialog>
+
+    <!-- Modal do Rastreador -->
+    <dialog id="trackerModal">
+        <article>
+            <header>
+                <h3>🎯 Live Pizza Order Tracker</h3>
+                <button type="button" onclick="closeModal('trackerModal')">&times;</button>
+            </header>
+            <section>
+                <fieldset id="trackerSearchBox">
+                    <input type="text" id="trackerInput" placeholder="Enter Order Code (e.g. BLEM-84920)">
+                    <button type="button" onclick="searchOrderTracker()">Track</button>
+                </fieldset>
+
+                <article id="trackerDisplay">
+                    <figure style="text-align:center; padding:30px;">
+                        <span style="font-size:3rem; margin-bottom:12px; display:block;">🍕</span>
+                        <figcaption><p>Enter your tracking code above to check live kitchen status.</p></figcaption>
+                    </figure>
+                </article>
+            </section>
+        </article>
+    </dialog>
+
+    <!-- Modal do Administrador -->
+    <dialog id="adminModal" data-modal-lg="true">
+        <article>
+            <header>
+                <h3>💾 BlemsDB Admin Database Portal</h3>
+                <button type="button" onclick="closeModal('adminModal')">&times;</button>
+            </header>
+            <section>
+                <nav id="adminTabs">
+                    <button type="button" data-admin-tab="ordersTab" data-active="true" onclick="switchAdminTab('ordersTab')">📋 Live Orders DB</button>
+                    <button type="button" data-admin-tab="reservationsTab" onclick="switchAdminTab('reservationsTab')">🪑 Reservations DB</button>
+                </nav>
+
+                <article id="ordersTab" data-admin-content="true" data-active="true">
+                    <section data-table-responsive="true">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID / Tracking</th>
+                                    <th>Customer</th>
+                                    <th>Type</th>
+                                    <th>Total</th>
+                                    <th>Current Status</th>
+                                    <th>Update Status (DB)</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminOrdersTableBody"></tbody>
+                        </table>
+                    </section>
+                </article>
+
+                <article id="reservationsTab" data-admin-content="true">
+                    <section data-table-responsive="true">
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>ID</th>
+                                    <th>Name</th>
+                                    <th>Phone</th>
+                                    <th>Date & Time</th>
+                                    <th>Guests</th>
+                                    <th>Preference</th>
+                                </tr>
+                            </thead>
+                            <tbody id="adminReservationsTableBody"></tbody>
+                        </table>
+                    </section>
+                </article>
+            </section>
+        </article>
+    </dialog>
+
+    <aside id="toastContainer"></aside>
+
+    <script src="/js/db.js"></script>
+    <script src="/js/cart.js"></script>
+    <script src="/js/builder.js"></script>
+    <script src="/js/tracker.js"></script>
+    <script src="/js/reservations.js"></script>
+    <script src="/js/admin.js"></script>
+    <script src="/js/app.js"></script>
+</body>
+</html>

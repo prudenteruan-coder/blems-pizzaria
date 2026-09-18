@@ -44,29 +44,26 @@ The application features clean code architecture and a technical challenge succe
 
 **🚀 Running Locally**
 
-This is a static site with no build step and no dependencies to install. Because it uses root-relative asset paths (`/css`, `/js`, `/images`), it must be served by a local web server — opening `index.html` directly from the file system (`file://`) will not load the styles and scripts correctly.
+This is a static site with no build step and no dependencies to install. All asset paths (`./css`, `./js`, `./images`) are relative, so it runs straight from the file system.
+
+**Option 1 — Just open the file**
 
 1. **Clone the repository**
    ```bash
    git clone https://github.com/<your-username>/blems-pizzaria.git
-   cd blems-pizzaria/public
    ```
+2. Double-click `public/index.html` (or open it directly in your browser).
 
-2. **Serve the `public` folder** with any static server, for example:
+**Option 2 — Local server with live reload**
+
+Useful while editing, so changes refresh automatically:
+
+1. Open the `public` folder in VS Code and use the **Live Server** extension (right-click `index.html` → "Open with Live Server"), **or** serve it from the terminal:
    ```bash
-   # Using Python 3
+   cd blems-pizzaria/public
    python3 -m http.server 8080
-
-   # or using Node.js (npx)
-   npx serve -l 8080
    ```
-
-3. **Open the app** in your browser at:
-   ```
-   http://localhost:8080
-   ```
-
-   Alternatively, use the **Live Server** extension for VS Code, right-clicking `public/index.html` and selecting "Open with Live Server".
+2. Open the app in your browser at `http://localhost:8080`.
 
 ---
 

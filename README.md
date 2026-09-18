@@ -9,7 +9,7 @@
 
 **BLEM'S PIZZARIA** is a modern, responsive web application with a high-end visual design (Dark Glassmorphism), designed specifically for the U.S. market (prices in USD `$`, classic American recipes such as *NY Style, Chicago Deep Dish, Detroit Style*, tip selector, and New York tax calculation).
 
-The application features clean code architecture, 100% comments in **Portuguese (BR)**, and a technical challenge successfully met: **Zero `class=“...”` attributes and Zero `<div>` tags** in the HTML, using exclusively selectors based on HTML5 semantic elements, IDs, and `data-*` attributes.
+The application features clean code architecture and a technical challenge successfully met: **Zero `class=“...”` attributes and Zero `<div>` tags** in the HTML, using exclusively selectors based on HTML5 semantic elements, IDs, and `data-*` attributes.
 
 ---
 

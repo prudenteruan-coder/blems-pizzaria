@@ -23,7 +23,7 @@ function renderMenuGrid(items) {
     menuGrid.innerHTML = items.map(item => `
         <article>
             <figure>
-                <img src="${item.image || '/images/blems_hero_pizza.jpg'}" alt="${item.name}">
+                <img src="${item.image || './images/blems_hero_pizza.jpg'}" alt="${item.name}">
                 ${item.badge ? `<mark>${item.badge}</mark>` : ''}
             </figure>
             <section>

@@ -1,22 +1,5 @@
-/**
- * =================================================================================
- * BLEM'S PIZZARIA - GESTOR DE RESERVAS DE MESA (reservations.js)
- * =================================================================================
- * Este script trata do envio do formulário de reserva de mesa para o backend Express:
- * - Validação de campos obrigatórios (Nome, Telefone, Data, Horário e Convidados)
- * - Envio via requisição HTTP POST (/api/reservations) para gravação no banco SQLite
- * - Exibição de mensagem de confirmação e notificação toast
- * 
- * Todos os comentários estão em Português (BR).
- * =================================================================================
- */
-
-/**
- * Manipula a submissão do formulário de reserva de mesa
- * @param {Event} event - Evento de submit do formulário
- */
 async function handleReservationSubmit(event) {
-    event.preventDefault(); // Evita recarregamento da página
+    event.preventDefault();
 
     const name = document.getElementById('resName').value.trim();
     const email = document.getElementById('resEmail').value.trim();
@@ -42,7 +25,6 @@ async function handleReservationSubmit(event) {
     };
 
     try {
-        // Envia os dados para a rota POST /api/reservations
         const response = await fetch('/api/reservations', {
             method: 'POST',
             headers: { 'Content-Type': 'application/json' },

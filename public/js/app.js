@@ -1,17 +1,3 @@
-/**
- * =================================================================================
- * BLEM'S PIZZARIA - CONTROLADOR PRINCIPAL ZERO-CLASSES (app.js)
- * =================================================================================
- * Este arquivo JavaScript gerencia a interface usando o motor de dados BlemsDB:
- * - Carregamento inicial de pratos e exibição na grid semântica (ZERO classes no HTML)
- * - Filtros por abas via atributos 'data-category' e 'data-active'
- * - Gerenciamento de modais com elemento nativo <dialog>
- * - Notificações flutuantes no elemento <aside id="toastContainer">
- * 
- * Todos os comentários estão em Português (BR).
- * =================================================================================
- */
-
 let allMenuItems = [];
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -20,18 +6,11 @@ document.addEventListener('DOMContentLoaded', () => {
     initCategoryTabs();
 });
 
-/**
- * Carrega o cardápio do motor BlemsDB
- */
 function loadMenuFromDB() {
     allMenuItems = BlemsDB.getMenu();
     renderMenuGrid(allMenuItems);
 }
 
-/**
- * Renderiza os pratos no elemento <section id="menuGrid"> sem utilizar nenhuma classe CSS
- * @param {Array} items - Lista de pratos
- */
 function renderMenuGrid(items) {
     const menuGrid = document.getElementById('menuGrid');
     if (!menuGrid) return;
@@ -61,9 +40,6 @@ function renderMenuGrid(items) {
     `).join('');
 }
 
-/**
- * Configura as abas de categoria usando o atributo data-active
- */
 function initCategoryTabs() {
     const tabs = document.querySelectorAll('#categoryTabs button');
     tabs.forEach(tab => {
@@ -82,9 +58,6 @@ function initCategoryTabs() {
     });
 }
 
-/**
- * Carrega as avaliações dos clientes (Zero Classes)
- */
 function loadReviewsFromDB() {
     const grid = document.getElementById('reviewsGrid');
     if (!grid) return;
@@ -102,9 +75,6 @@ function loadReviewsFromDB() {
     `).join('');
 }
 
-/**
- * Abre a gaveta do carrinho
- */
 function openCartDrawer() {
     const drawer = document.getElementById('cartDrawer');
     const overlay = document.getElementById('cartOverlay');
@@ -112,9 +82,6 @@ function openCartDrawer() {
     if (overlay) overlay.setAttribute('data-active', 'true');
 }
 
-/**
- * Fecha a gaveta do carrinho
- */
 function closeCartDrawer() {
     const drawer = document.getElementById('cartDrawer');
     const overlay = document.getElementById('cartOverlay');
@@ -122,10 +89,6 @@ function closeCartDrawer() {
     if (overlay) overlay.removeAttribute('data-active');
 }
 
-/**
- * Abre um modal <dialog> pelo ID
- * @param {string} modalId - ID do modal
- */
 function openModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) {
@@ -136,18 +99,11 @@ function openModal(modalId) {
     }
 }
 
-/**
- * Fecha um modal <dialog> pelo ID
- * @param {string} modalId - ID do modal
- */
 function closeModal(modalId) {
     const modal = document.getElementById(modalId);
     if (modal) modal.removeAttribute('data-active');
 }
 
-/**
- * Alterna o menu mobile
- */
 function toggleMobileMenu() {
     const menu = document.getElementById('navMenu');
     if (menu) {
@@ -156,10 +112,6 @@ function toggleMobileMenu() {
     }
 }
 
-/**
- * Exibe notificação flutuante
- * @param {string} message - Texto da mensagem
- */
 function showToast(message) {
     const container = document.getElementById('toastContainer');
     if (!container) return;

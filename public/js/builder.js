@@ -1,16 +1,3 @@
-/**
- * =================================================================================
- * BLEM'S PIZZARIA - CONSTRUTOR DE PIZZA ZERO-CLASSES (builder.js)
- * =================================================================================
- * Este script controla a personalização de pizzas sem utilizar NENHUMA classe CSS no HTML:
- * - Seleção de Tamanho, Massa, Molho e Coberturas via atributo 'data-active'
- * - Atualização dos elementos semânticos <output id="builderTotalPrice"> e <figcaption>
- * - Inclusão da pizza customizada no carrinho de compras do BlemsDB
- * 
- * Todos os comentários estão em Português (BR).
- * =================================================================================
- */
-
 let customPizzaState = {
     size: 'Large 14"',
     basePrice: 21.49,
@@ -23,7 +10,6 @@ let customPizzaState = {
 };
 
 function initPizzaBuilder() {
-    // 1. Tamanho
     const sizeBtns = document.querySelectorAll('#sizeOptions button');
     sizeBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -36,7 +22,6 @@ function initPizzaBuilder() {
         });
     });
 
-    // 2. Massa
     const crustBtns = document.querySelectorAll('#crustOptions button');
     crustBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -49,7 +34,6 @@ function initPizzaBuilder() {
         });
     });
 
-    // 3. Molho
     const sauceBtns = document.querySelectorAll('#sauceOptions button');
     sauceBtns.forEach(btn => {
         btn.addEventListener('click', () => {
@@ -62,7 +46,6 @@ function initPizzaBuilder() {
         });
     });
 
-    // 4. Coberturas (Toppings)
     const toppingBtns = document.querySelectorAll('#toppingsGrid button');
     toppingBtns.forEach(btn => {
         btn.addEventListener('click', () => {

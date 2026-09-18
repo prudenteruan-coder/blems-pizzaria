@@ -1,14 +1,3 @@
-/**
- * =================================================================================
- * BLEM'S PIZZARIA - RASTREADOR DE PEDIDOS ZERO-CLASSES (tracker.js)
- * =================================================================================
- * Este script consulta o motor BlemsDB para renderizar a timeline de progresso
- * do pedido sem utilizar NENHUMA classe CSS no HTML gerado dinamicamente.
- * 
- * Todos os comentários estão em Português (BR).
- * =================================================================================
- */
-
 const ORDER_STEPS = [
     { key: 'Received', label: 'Order Received', icon: '📋', desc: 'Order placed and sent to kitchen team.' },
     { key: 'Preparing', label: 'Dough & Sauce Prepped', icon: '🥣', desc: 'Hand-tossing dough and adding fresh toppings.' },
@@ -43,10 +32,6 @@ function searchOrderTracker() {
     }
 }
 
-/**
- * Renderiza a timeline com elementos semânticos sem nenhuma classe CSS
- * @param {Object} order - Objeto do pedido
- */
 function renderTrackerTimeline(order) {
     const display = document.getElementById('trackerDisplay');
     if (!display) return;

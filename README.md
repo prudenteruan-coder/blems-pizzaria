@@ -1,7 +1,7 @@
  BLEM'S PIZZERIA
 
 > **Professional Web Application for a Pizzeria Targeting the U.S. Market**
-> *Developed with 100% semantic HTML5 (zero classes), attribute-based CSS3, standalone JavaScript, and a custom database (BlemsDB).*
+> *Developed with 100% semantic HTML5 (zero classes), attribute-based CSS3, standalone JavaScript*
 
 ---
 
